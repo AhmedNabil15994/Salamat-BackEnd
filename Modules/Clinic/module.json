@@ -1,0 +1,17 @@
+{
+    "name": "Clinic",
+    "alias": "clinic",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Clinic\\Providers\\ClinicServiceProvider"
+    ],
+    "aliases": {
+        "ClinicFacade": "Modules\\Clinic\\Facades\\ClinicFacade"
+    },
+    "files": [
+      "composer.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/socialmedia",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\SocialMedia\\Providers\\SocialMediaServiceProvider"
+            ],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\SocialMedia\\": ""
+        }
+    }
+}

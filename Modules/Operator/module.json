@@ -1,0 +1,15 @@
+{
+    "name": "Operator",
+    "alias": "operator",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Operator\\Providers\\OperatorServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+      "composer.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Availability",
+    "alias": "availability",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Availability\\Providers\\AvailabilityServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "composer.php"
+    ],
+    "requires": []
+}

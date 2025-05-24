@@ -1,0 +1,44 @@
+<?php
+
+namespace Modules\Order\Transformers\Api;
+
+use Illuminate\Http\Resources\Json\JsonResource;
+use Modules\Offer\Transformers\Api\BookedOfferResource;
+use Modules\Doctor\Transformers\Api\DoctorResource;
+use Modules\Service\Transformers\Api\ServiceResource;
+
+class OrderResource extends JsonResource
+{
+    public function toArray($request)
+    {
+        return [
+           'id'                 => $this->id,
+           'is_finished'        => $this->is_finished,
+           'is_paid'            => $this->is_paid,
+           'is_pending'         => $this->is_pending,
+           'subtotal'           => $this->subtotal,
+           'discount'           => $this->discount,
+           'total'              => $this->total,
+           'time_from'          => $this->time_from,
+           'service_id'         => $this->service_id,
+           'time_to'            => $this->time_to,
+           'date'               => $this->date,
+           'transaction'        => $this->whenLoaded('transactions', function() {
+               return $this->transactions->method;
+           }),
+           'order_status_id'    => $this->order_status_id,
+           'order_status'       => $this->whenLoaded('orderStatus', function() {
+               return $this->orderStatus->translate(locale())->title;
+           }),
+           'rate'               => $this->whenLoaded('rates', function() {
+               return $this->rates->rate;
+           }),
+
+           'doctor' => $this->doctor ? new DoctorResource($this->whenLoaded('doctor')) : new DoctorResource(optional(optional($this->service)->doctor)->doctor),
+
+           'service'            => new ServiceResource($this->whenLoaded('service')),
+           'bookedOffer'        => new BookedOfferResource($this->whenLoaded('bookedOffer')),
+           'created_at'         => $this->created_at,
+       ];
+    }
+}

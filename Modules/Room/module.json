@@ -1,0 +1,15 @@
+{
+    "name": "Room",
+    "alias": "room",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Room\\Providers\\RoomServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+      "composer.php"
+    ],
+    "requires": []
+}

@@ -1,0 +1,15 @@
+{
+    "name": "Specialty",
+    "alias": "specialty",
+    "description": "",
+    "keywords": [],
+    "order": 0,
+    "providers": [
+        "Modules\\Specialty\\Providers\\SpecialtyServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+      "composer.php"
+    ],
+    "requires": []
+}
